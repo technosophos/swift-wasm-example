@@ -1,0 +1,16 @@
+
+# Define a basic HTTP app
+spin_version = "1"
+name = "spin-hello"
+trigger = { type = "http", base = "/" }
+version = "1.0.1"
+
+# Attach our `example.wasm` file to this app
+[[component]]
+id = "swift-example"
+source = "example.wasm"
+[component.trigger]
+route = "/"
+executor = { type = "wagi" }
+[component.build]
+command = "swiftc -target wasm32-unknown-wasi example.swift -o example.wasm"
