@@ -1,7 +1,7 @@
 // This gives us `getenv`
 import WASILibc
 
-// Get the name from the QUERY_STRING, or else use a sensible default.
+// Get the name from the Argv, or else use a sensible default.
 func getName() -> String {
     // This will be our default name
     let defaultName = "there"
